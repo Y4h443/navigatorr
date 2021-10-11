@@ -77,10 +77,10 @@ import java.util.List;
 public class InstituteAdapter  extends RecyclerView.Adapter<InstituteAdapter.ViewHolder>{
 
     private final LayoutInflater inflater;
-    private final List<Institutes> states;
+    private final List<Institutes> list_of_institutes;
 
-    public InstituteAdapter(Context context, List<Institutes> states) {
-        this.states = states;
+    public InstituteAdapter(Context context, List<Institutes> list_of_institutes) {
+        this.list_of_institutes = list_of_institutes;
         this.inflater = LayoutInflater.from(context);
     }
     @Override
@@ -92,25 +92,25 @@ public class InstituteAdapter  extends RecyclerView.Adapter<InstituteAdapter.Vie
 
     @Override
     public void onBindViewHolder(InstituteAdapter.ViewHolder holder, int position) {
-        Institutes state = states.get(position);
-        holder.flagView.setImageResource(state.getFlagResource());
-        holder.nameView.setText(state.getName());
-        holder.capitalView.setText(state.getCapital());
+        Institutes state = list_of_institutes.get(position);
+        holder.imgView.setImageResource(state.getFlagResource());
+        //holder.nameView.setText(state.getName());
+
     }
 
     @Override
     public int getItemCount() {
-        return states.size();
+        return list_of_institutes.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        final ImageView flagView;
-        final TextView nameView, capitalView;
+        final ImageView imgView;
+        //final TextView nameView;
         ViewHolder(View view){
             super(view);
-            flagView = (ImageView)view.findViewById(R.id.flag);
-            nameView = (TextView) view.findViewById(R.id.name);
-            capitalView = (TextView) view.findViewById(R.id.capital);
+            imgView = (ImageView)view.findViewById(R.id.img);
+            //nameView = (TextView) view.findViewById(R.id.name);
+
         }
     }
 }

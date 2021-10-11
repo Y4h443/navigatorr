@@ -40,34 +40,41 @@ public class FacultyActivity extends AppCompatActivity {
 }*/
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
-
+import android.view.View;
+import android.widget.Button;
 import com.example.navigator.adapter.InstituteAdapter;
-
 import java.util.ArrayList;
 
 public class FacultyActivity extends AppCompatActivity {
 
-    ArrayList<Institutes> states = new ArrayList<Institutes>();
+    private Button button1;
+
+    ArrayList<Institutes> list_of_institutes = new ArrayList<Institutes>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculty);
         // начальная инициализация списка
         setInitialData();
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView myList = (RecyclerView) findViewById(R.id.list);
+        myList.setLayoutManager(layoutManager);
         // создаем адаптер
-        InstituteAdapter adapter = new InstituteAdapter(this, states);
+        InstituteAdapter adapter = new InstituteAdapter(this,  list_of_institutes);
         // устанавливаем для списка адаптер
-        recyclerView.setAdapter(adapter);
+        myList.setAdapter(adapter);
     }
     private void setInitialData(){
 
-        states.add(new Institutes ("Бразилия", "Бразилиа", R.drawable.ic_business));
-        states.add(new Institutes ("Аргентина", "Буэнос-Айрес", R.drawable.ic_humanitarian));
-        states.add(new Institutes ("Колумбия", "Богота", R.drawable.ic_informational));
-        //states.add(new Institutes ("Уругвай", "Монтевидео", R.drawable.uruguai));
-        //states.add(new Institutes ("Чили", "Сантьяго", R.drawable.chile));
+        list_of_institutes.add(new Institutes (R.drawable.iit));
+        list_of_institutes.add(new Institutes (R.drawable.pip));
+        list_of_institutes.add(new Institutes (R.drawable.iti));
+        list_of_institutes.add(new Institutes (R.drawable.fbzch));
+        list_of_institutes.add(new Institutes (R.drawable.bsh));
+        list_of_institutes.add(new Institutes (R.drawable.gi));
     }
+
 }

@@ -15,30 +15,27 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".FacultyActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.FacultyActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity
             android:name=".MainActivity"
             android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MainActivity" />
-
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-        </activity>
-        <activity
-            android:name=".FacultyActivity"
-            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.FacultyActivity" />
-
+                <action android:name="android.intent.action.MainActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
 
     </application>
 

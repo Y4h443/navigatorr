@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Navigator</string>
     <string name="name">Институты</string>
+    <string name="button">Button</string>
 </resources>
