@@ -10,12 +10,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Navigator">
 
+        <!-- PrepodActivity, NewsActivity, logotip -->
         <activity
             android:name=".logotip"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".NewsPage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.NewsPage" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".NewsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.NewsActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
@@ -29,10 +57,19 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".PrepodActivity"
             android:exported="true" >
             <intent-filter>
-                <action android:name="android.intent.action.MainActivity" />
+                <action android:name="android.intent.action.PrepodActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ReferencesActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.ReferencesActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

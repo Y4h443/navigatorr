@@ -1,51 +1,19 @@
 package com.example.navigator;
 
-/*import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.navigator.Institutes;
-import com.example.navigator.R;
-import com.example.navigator.adapter.InstituteAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class FacultyActivity extends AppCompatActivity {
-    RecyclerView institutesRecycler;
-    InstituteAdapter instituteAdapter;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_faculty);
-        List<Institutes> institutesList = new ArrayList<>();
-        institutesList.add(new Institutes(1,"humanitarian","Гуманитарный иститут"));
-        institutesList.add(new Institutes(1,"business","Бизнес-школа"));
-        institutesList.add(new Institutes(1,"informational","Институт информационных технологий"));
-        setInstituteRecycler(institutesList);
-    }
-    private void setInstituteRecycler(List<Institutes> institutesList) {
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
-        institutesRecycler=findViewById(R.id.institutesRecycler);
-        institutesRecycler.setLayoutManager(layoutManager);
-        instituteAdapter=new InstituteAdapter(this,institutesList);
-        institutesRecycler.setAdapter(instituteAdapter);
-    }
-}*/
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import com.example.navigator.adapter.InstituteAdapter;
+import com.example.navigator.models.Institutes;
+
 import java.util.ArrayList;
 
 public class FacultyActivity extends AppCompatActivity {
@@ -55,7 +23,11 @@ public class FacultyActivity extends AppCompatActivity {
     ArrayList<Institutes> list_of_institutes = new ArrayList<Institutes>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        //FullScreen
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_faculty);
         // начальная инициализация списка
         setInitialData();
@@ -66,7 +38,26 @@ public class FacultyActivity extends AppCompatActivity {
         InstituteAdapter adapter = new InstituteAdapter(this,  list_of_institutes);
         // устанавливаем для списка адаптер
         myList.setAdapter(adapter);
+
+       //button1
+
+        button1 = findViewById(R.id.button1);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Context context = FacultyActivity.this;
+
+                Class NextActivity = PrepodActivity.class;
+                Intent dropActivity = new Intent(context, NextActivity);
+                startActivity(dropActivity);
+            }
+        });
+
+
     }
+
     private void setInitialData(){
 
         list_of_institutes.add(new Institutes (R.drawable.iit));
@@ -77,4 +68,6 @@ public class FacultyActivity extends AppCompatActivity {
         list_of_institutes.add(new Institutes (R.drawable.gi));
     }
 
-}
+
+};
+

@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.navigator.Institutes;
+import com.example.navigator.models.Institutes;
 import com.example.navigator.R;
 import com.example.navigator.logotip;
 
@@ -65,11 +65,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.navigator.Institutes;
+import com.example.navigator.models.Institutes;
 import com.example.navigator.R;
 
 import java.util.List;
