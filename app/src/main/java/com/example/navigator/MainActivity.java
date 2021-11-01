@@ -37,49 +37,5 @@ public class MainActivity extends NavigationActivity {
         setContentView(R.layout.activity_main);
 
         setNavBar();
-
-        textViewResult = findViewById(R.id.imageView2);
-
-        JsonPlaceHolderApi jsonPlaceHolderApi = HttpRequests.getRetrofit().create(JsonPlaceHolderApi.class);
-
-        Call<ResponseBody> call = jsonPlaceHolderApi.getPosts();
-
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                ResponseBody body = response.body();
-                byte[] bytes = new byte[0];
-                try {
-                    assert body != null;
-                    bytes = body.bytes();
-                } catch (IOException e) {
-                    System.out.println(e);
-                }
-                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                textViewResult.setImageBitmap(bitmap);
-//                if (!response.isSuccessful()) {
-//                    textViewResult.setText("Code: " + response.code());
-//                    return;
-//                }
-//
-//                List<Post> posts = response.body();
-//                posts = posts.subList(0, 10);
-//                for (Post post : posts) {
-//                    String content = "";
-//                    content += "ID: " + post.getId() + "\n";
-//                    content += "User ID: " + post.getUserId() + "\n";
-//                    content += "Title: " + post.getTitle() + "\n";
-//                    content += "Text: " + post.getText() + "\n\n";
-//
-//                    textViewResult.append(content);
-//                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                System.out.println(t.getMessage());
-//                textViewResult.setText(t.getMessage());
-            }
-        });
     }
 }

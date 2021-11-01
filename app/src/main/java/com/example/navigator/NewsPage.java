@@ -13,7 +13,7 @@ public class NewsPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_page);
 
-        ImageView imageNews =findViewById(R.id.news_page_image);
+        ImageView imageNews = findViewById(R.id.news_page_image);
         TextView titleNews = findViewById(R.id.news_page_title);
         TextView textNews = findViewById(R.id.news_page_text);
 

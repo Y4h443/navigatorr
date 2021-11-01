@@ -43,8 +43,8 @@ public class NewsCardAdapter extends RecyclerView.Adapter<NewsCardAdapter.NewsCa
     @SuppressLint("RecyclerView") // todo убрать
     @Override
     public void onBindViewHolder(@NonNull NewsCardViewHolder holder, int position) {
-        int imageId = context.getResources().getIdentifier(newsCards.get(position).getImg(), "drawable", context.getPackageName());
-        holder.newsCardImage.setImageResource(imageId); // TODO возможно заменить на Bitmap
+        int imageId = context.getResources().getIdentifier(newsCards.get(position).getImg()[0], "drawable", context.getPackageName());
+        holder.newsCardImage.setImageResource(imageId); // TODO заменить на Bitmap
         holder.newsCardTitle.setText(newsCards.get(position).getTitle());
         holder.newsCardText.setText(newsCards.get(position).getText());
 

@@ -5,9 +5,10 @@ package com.example.navigator.models;
  */
 public class NewsCard {
     int id;
-    String img, title, text;
+    String title, text;
+    String[] img;
 
-    public NewsCard(int id, String img, String title, String text) {
+    public NewsCard(int id, String[] img, String title, String text) {
         this.id = id;
         this.img = img;
         this.title = title;
@@ -22,11 +23,11 @@ public class NewsCard {
         this.id = id;
     }
 
-    public String getImg() {
+    public String[] getImg() {
         return img;
     }
 
-    public void setImg(String img) {
+    public void setImg(String[] img) {
         this.img = img;
     }
 
