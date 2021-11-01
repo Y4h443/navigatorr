@@ -1,12 +1,11 @@
 package com.example.navigator.models;
 
-import java.util.List;
-
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface JsonPlaceHolderApi {
 
-    @GET("photos")
-    Call<List<Post>> getPosts();
+    @GET("globe_emea.png")
+    Call<ResponseBody> getPosts();
 }
