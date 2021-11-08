@@ -36,12 +36,13 @@ public class NewsActivity extends NavigationActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
-
-        textViewResult = findViewById(R.id.imageView2);
+        List<Bitmap> bitmaps = new ArrayList<>();
 
         JsonPlaceHolderApi jsonPlaceHolderApi = HttpRequests.getRetrofit().create(JsonPlaceHolderApi.class);
 
-        Call<ResponseBody> call = jsonPlaceHolderApi.getPosts();
+        Call<ResponseBody> call = jsonPlaceHolderApi.getNews();
+
+        List<NewsCard> cards = new ArrayList<>();
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -49,7 +50,6 @@ public class NewsActivity extends NavigationActivity {
 
                 if (!response.isSuccessful()) {
                     System.out.println(response.code());
-//                    textViewResult.setText("Code: " + response.code());
                     return;
                 }
 
@@ -62,34 +62,19 @@ public class NewsActivity extends NavigationActivity {
                     e.printStackTrace();
                 }
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                textViewResult.setImageBitmap(bitmap);
+                bitmaps.add(bitmap);
+                cards.add(new NewsCard(1, bitmaps, "В прямом эфире поговорили про внеучебную деятельность в Череповецком государственном университете", "На вопросы первокурсников ответила Яна Юрьевна Черняева, начальник Центра студенческой культуры и творчества. Ведущая: Полина Готовчиц."));
+                cards.add(new NewsCard(2, bitmaps, "«Школа старост – 2021» объявляется открытой!", "К ребятам с приветственным словом обратилась Наталья Вячеславовна Макарова, проректор по воспитательной работе. Она обратила внимание на значимость старосты в системе вуза и пожелала успехов в обучении."));
 
-//                List<Post> posts = response.body();
-//                posts = posts.subList(0, 10);
-//                for (Post post : posts) {
-//                    String content = "";
-//                    content += "ID: " + post.getId() + "\n";
-//                    content += "User ID: " + post.getUserId() + "\n";
-//                    content += "Title: " + post.getTitle() + "\n";
-//                    content += "Text: " + post.getText() + "\n\n";
-//
-//                    textViewResult.append(content);
-//                }
+                setNewsCardRecycler(cards);
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
                 System.out.println(t.getMessage());
-//                textViewResult.setText(t.getMessage());
             }
         });
 
-
-        List<NewsCard> cards = new ArrayList<>();
-        cards.add(new NewsCard(1, new String[]{"news_1"}, "В12 прямом эфире поговорили про внеучебную деятельность в Череповецком государственном университете", "На вопросы первокурсников ответила Яна Юрьевна Черняева, начальник Центра студенческой культуры и творчества. Ведущая: Полина Готовчиц."));
-        cards.add(new NewsCard(2, new String[]{"news_2"}, "«Школа старост – 2021» объявляется открытой!", "К ребятам с приветственным словом обратилась Наталья Вячеславовна Макарова, проректор по воспитательной работе. Она обратила внимание на значимость старосты в системе вуза и пожелала успехов в обучении."));
-
-        setNewsCardRecycler(cards);
         setNavBar();
     }
 

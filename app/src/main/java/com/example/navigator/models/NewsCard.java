@@ -1,14 +1,18 @@
 package com.example.navigator.models;
 
+import android.graphics.Bitmap;
+
+import java.util.List;
+
 /**
  * Представляет карточку новостей.
  */
 public class NewsCard {
     int id;
     String title, text;
-    String[] img;
+    List<Bitmap> img;
 
-    public NewsCard(int id, String[] img, String title, String text) {
+    public NewsCard(int id, List<Bitmap>  img, String title, String text) {
         this.id = id;
         this.img = img;
         this.title = title;
@@ -23,11 +27,11 @@ public class NewsCard {
         this.id = id;
     }
 
-    public String[] getImg() {
+    public List<Bitmap>  getImg() {
         return img;
     }
 
-    public void setImg(String[] img) {
+    public void setImg(List<Bitmap> img) {
         this.img = img;
     }
 

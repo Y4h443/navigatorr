@@ -1,10 +1,12 @@
 package com.example.navigator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class NewsPage extends AppCompatActivity {
 
@@ -17,7 +19,10 @@ public class NewsPage extends AppCompatActivity {
         TextView titleNews = findViewById(R.id.news_page_title);
         TextView textNews = findViewById(R.id.news_page_text);
 
-        imageNews.setImageResource(getIntent().getIntExtra("imageNews", 0));
+        Bitmap image = BitmapFactory.decodeByteArray(
+                getIntent().getByteArrayExtra("imageNews"), 0, getIntent().getByteArrayExtra("imageNews").length);
+        imageNews.setImageBitmap(image);
+
         titleNews.setText(getIntent().getStringExtra("titleNews"));
         textNews.setText(getIntent().getStringExtra("textNews"));
     }
