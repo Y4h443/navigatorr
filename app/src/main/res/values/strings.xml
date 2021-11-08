@@ -3,4 +3,5 @@
     <string name="name">Институты</string>
     <string name="button">Button</string>
     <string name="news_main_title">Новости ЧГУ</string>
+    <string name="references_main_title">Справки</string>
 </resources>

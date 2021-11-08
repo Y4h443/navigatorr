@@ -1,54 +1,84 @@
 package com.example.navigator.adapter;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.navigator.NewsPage;
 import com.example.navigator.R;
+import com.example.navigator.models.NewsCard;
 import com.example.navigator.models.References;
 
 import java.util.List;
 
+public class ReferencesAdapter extends RecyclerView.Adapter<ReferencesAdapter.ReferencesViewHolder> {
 
-public class ReferencesAdapter extends RecyclerView.Adapter<ReferencesAdapter.ViewHolder>{
+    Context context;
+    List<References> newsCards;
 
-    private final LayoutInflater inflater;
-    private final List<References> list_of_references;
-
-    public ReferencesAdapter(Context context, List<References> list_of_references) {
-        this.list_of_references = list_of_references;
-        this.inflater = LayoutInflater.from(context);
+    public ReferencesAdapter(Context context, List<References> newsCards) {
+        this.context = context;
+        this.newsCards = newsCards;
     }
+
+    /**
+     * Устанавливает дизайн всех карточек новостей.
+     */
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-        View view = inflater.inflate(R.layout.references_item, parent, false);
-        return new ViewHolder(view);
+    public ReferencesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View cards = LayoutInflater.from(context).inflate(R.layout.references_item, parent, false);
+        return new ReferencesAdapter.ReferencesViewHolder(cards);
     }
 
+    /**
+     * Подставляет в представление нужные ресурсы.
+     */
+    @SuppressLint("RecyclerView") // todo убрать
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        References reference = list_of_references.get(position);
-       // holder.imgView.setImageResource(state.getFlagResource());
-        holder.nameView.setText(reference.getName());
+    public void onBindViewHolder(@NonNull ReferencesViewHolder holder, int position) {
+        holder.newsCardTitle.setText(newsCards.get(position).getName());
+        holder.newsCardText.setText(newsCards.get(position).getText());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newsPage = new Intent(context, NewsPage.class);
+                newsPage.putExtra("titleNews", newsCards.get(position).getName());
+                newsPage.putExtra("textNews", newsCards.get(position).getText());
+                context.startActivity(newsPage);
+            }
+        });
     }
 
+    /**
+     * Возвращает размер списка новостей.
+     */
     @Override
     public int getItemCount() {
-        return list_of_references.size();
+        return newsCards.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        //final ImageView imgView;
-        final TextView nameView;
-        ViewHolder(View view){
-            super(view);
-           // imgView = (ImageView)view.findViewById(R.id.img);
-            nameView = (TextView) view.findViewById(R.id.name);
+    /**
+     * Представляет элемент дизайна, карточки новостей.
+     */
+    public static final class ReferencesViewHolder extends RecyclerView.ViewHolder {
 
+        ImageView newsCardImage;
+        TextView newsCardTitle, newsCardText;
+
+        public ReferencesViewHolder(@NonNull View itemView) {
+            super(itemView);
+           // newsCardImage = itemView.findViewById(R.id.newsImage);
+            newsCardTitle = itemView.findViewById(R.id.newsTitle);
+            newsCardText = itemView.findViewById(R.id.newsText);
         }
     }
 }
