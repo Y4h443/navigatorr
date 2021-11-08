@@ -30,7 +30,7 @@
         android:id="@+id/textView"
         android:layout_width="277dp"
         android:layout_height="80dp"
-        android:text="Выбери свой институт (факультет)"
+        android:text="Выбери свой институтт (факультет)"
         android:textAlignment="center"
         android:textColor="#494444"
         android:textSize="27sp"
