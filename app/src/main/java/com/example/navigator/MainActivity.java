@@ -40,10 +40,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void SetMarkers(GoogleMap googleMap){
-        places.add(new Place(new LatLng(59.12055738079308, 37.932), "Название1")); // todo Тут будут координаты
-        places.add(new Place(new LatLng(59.12055738079308, 37.933), "Название2"));
+       /* places.add(new Place(new LatLng(59.12055738079308, 37.932), "Название1")); // todo Тут будут координаты
+       places.add(new Place(new LatLng(59.12055738079308, 37.933), "Название2"));
         places.add(new Place(new LatLng(59.12055738079308, 37.934), "Название3"));
-        places.add(new Place(new LatLng(59.12055738079308, 37.935), "Название4"));
+        places.add(new Place(new LatLng(59.12055738079308, 37.935), "Название4"));*/
 
         MarkerOptions[] markers = new MarkerOptions[places.size()];
         for (int i = 0; i < places.size(); i++) {

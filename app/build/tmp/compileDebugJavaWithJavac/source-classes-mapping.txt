@@ -1,0 +1,48 @@
+com/example/navigator/Prepodi.java
+ com.example.navigator.Prepodi
+com/example/navigator/PrepodActivity.java
+ com.example.navigator.PrepodActivity
+com/example/navigator/models/NewsCard.java
+ com.example.navigator.models.NewsCard
+com/example/navigator/adapter/ReferencesAdapter.java
+ com.example.navigator.adapter.ReferencesAdapter
+ com.example.navigator.adapter.ReferencesAdapter$1
+ com.example.navigator.adapter.ReferencesAdapter$ReferencesViewHolder
+com/example/navigator/adapter/PrepodAdapter.java
+ com.example.navigator.adapter.PrepodAdapter
+ com.example.navigator.adapter.PrepodAdapter$ViewHolder
+com/example/navigator/ReferencesActivity.java
+ com.example.navigator.ReferencesActivity
+com/example/navigator/NewsPage.java
+ com.example.navigator.NewsPage
+com/example/navigator/models/Institutes.java
+ com.example.navigator.models.Institutes
+com/example/navigator/models/References.java
+ com.example.navigator.models.References
+com/example/navigator/FacultyActivity.java
+ com.example.navigator.FacultyActivity
+ com.example.navigator.FacultyActivity$1
+com/example/navigator/adapter/InstituteAdapter.java
+ com.example.navigator.adapter.InstituteAdapter
+ com.example.navigator.adapter.InstituteAdapter$ViewHolder
+com/example/navigator/logotip.java
+ com.example.navigator.logotip
+ com.example.navigator.logotip$1
+com/example/navigator/models/News.java
+ com.example.navigator.models.News
+com/example/navigator/BuildConfig.java
+ com.example.navigator.BuildConfig
+com/example/navigator/adapter/NewsCardAdapter.java
+ com.example.navigator.adapter.NewsCardAdapter
+ com.example.navigator.adapter.NewsCardAdapter$1
+ com.example.navigator.adapter.NewsCardAdapter$NewsCardViewHolder
+com/example/navigator/models/Place.java
+ com.example.navigator.models.Place
+com/example/navigator/MainActivity.java
+ com.example.navigator.MainActivity
+com/example/navigator/NewsActivity.java
+ com.example.navigator.NewsActivity
+ com.example.navigator.NewsActivity$1
+ com.example.navigator.NewsActivity$MyTask
+com/example/navigator/NavigationActivity.java
+ com.example.navigator.NavigationActivity

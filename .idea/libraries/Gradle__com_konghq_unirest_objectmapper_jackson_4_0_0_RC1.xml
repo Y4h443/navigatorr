@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.konghq:unirest-objectmapper-jackson:4.0.0-RC1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.konghq/unirest-objectmapper-jackson/4.0.0-RC1/3b2774698eedc7a0bfd5f7fb87461949146a5249/unirest-objectmapper-jackson-4.0.0-RC1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.konghq/unirest-objectmapper-jackson/4.0.0-RC1/50905c41460154d691f6c53c24d55b427b2e76c2/unirest-objectmapper-jackson-4.0.0-RC1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.konghq/unirest-objectmapper-jackson/4.0.0-RC1/5da07d2aae0e6364218f253dd2366b2f7702a00/unirest-objectmapper-jackson-4.0.0-RC1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
